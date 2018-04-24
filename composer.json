@@ -12,7 +12,7 @@
         "classmap": [
             "Exam/MultiplesChecker.php",
             "Exam/MessageSelector.php",
-            "Exam/RangePrinter.php"
+            "Exam/ChallengeTwo.php"
         ]
     },
     "require": {},
