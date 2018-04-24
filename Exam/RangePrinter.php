@@ -4,7 +4,7 @@ namespace Multiplica\Exam;
 
 use Multiplica\Exam\MessageGenerator;
 
-class ChallengeTwo
+class RangePrinter
 {
     private $firstNumber;
     private $lastNumber;
