@@ -1,10 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: cesaroctavio
- * Date: 24/04/18
- * Time: 12:28
- */
+
+namespace Multiplica\Tests;
 
 use Multiplica\Exam\MultiplesChecker;
 use Multiplica\Exam\MessageSelector;
@@ -20,7 +16,7 @@ class MessageSelectorTest extends TestCase
     /**
      * This method is called before the first test of this test class is run.
      */
-    public static function setUpBeforeClass()/* The :void return type declaration that should be here would cause a BC issue */
+    public static function setUpBeforeClass()
     {
         $checker = new MultiplesChecker();
         self::$messageSelector = new MessageSelector($checker);
@@ -31,9 +27,9 @@ class MessageSelectorTest extends TestCase
      */
     public function testLinianos($number): void
     {
-
         $this->assertEquals(
-            'Linianos', self::$messageSelector->select($number)
+            'Linianos',
+            self::$messageSelector->select($number)
         );
     }
 
@@ -42,9 +38,9 @@ class MessageSelectorTest extends TestCase
      */
     public function testITs($number): void
     {
-
         $this->assertEquals(
-            'IT', self::$messageSelector->select($number)
+            'IT',
+            self::$messageSelector->select($number)
         );
     }
 
@@ -55,7 +51,8 @@ class MessageSelectorTest extends TestCase
     {
 
         $this->assertEquals(
-            'Linio', self::$messageSelector->select($number)
+            'Linio',
+            self::$messageSelector->select($number)
         );
     }
 
@@ -66,7 +63,8 @@ class MessageSelectorTest extends TestCase
     {
 
         $this->assertEquals(
-            $number, self::$messageSelector->select($number)
+            $number,
+            self::$messageSelector->select($number)
         );
     }
 
@@ -83,7 +81,7 @@ class MessageSelectorTest extends TestCase
         $diff=array_diff($multiples, $linianos);
 
         $its=[];
-        foreach($diff as $val){
+        foreach ($diff as $val) {
             $its[]=[$val];
         }
         return $its;
@@ -96,7 +94,7 @@ class MessageSelectorTest extends TestCase
         $diff=array_diff($multiples, $linianos);
 
         $linios=[];
-        foreach($diff as $val){
+        foreach ($diff as $val) {
             $linios[]=[$val];
         }
         return $linios;
@@ -109,11 +107,11 @@ class MessageSelectorTest extends TestCase
         $multiples5=$this->getMultiplesOf(5, false);
 
 
-        $range= range(1,100);
+        $range= range(1, 100);
         $diff=array_diff($range, $linianos, $multiples3, $multiples5);
 
         $numbers=[];
-        foreach($diff as $val){
+        foreach ($diff as $val) {
             $numbers[]=[$val];
         }
 
@@ -121,16 +119,17 @@ class MessageSelectorTest extends TestCase
     }
 
 
-    private function getMultiplesOf($number, $asArray=true){
+    private function getMultiplesOf($number, $asArray = true)
+    {
         $multiples=[];
-        for ($i=1; $i<self::MAX_NUMBER+1; $i++){
+        for ($i=1; $i<self::MAX_NUMBER+1; $i++) {
             $multiple=$number*$i;
             if ($multiple>self::MAX_NUMBER) {
                 break;
             }
-            if ($asArray){
+            if ($asArray) {
                 $multiples[]=[$multiple];
-            }else{
+            } else {
                 $multiples[]=$multiple;
             }
 
