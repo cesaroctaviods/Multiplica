@@ -6,22 +6,19 @@ use Multiplica\Exam\MessageSelector;
 
 class RangePrinter
 {
-    private $firstNumber;
-    private $lastNumber;
 
     /** @var MessageSelector  */
     private $messageSelector;
 
-    public function __construct(MessageSelector $messageSelector, $firstNumber, $lastNumber)
+    public function __construct(MessageSelector $messageSelector)
     {
         $this->messageSelector=$messageSelector;
-        $this->firstNumber=$firstNumber;
-        $this->lastNumber=$lastNumber;
+
     }
 
-    public function execute()
+    public function execute($firstNumber, $lastNumber)
     {
-        for ($i=$this->firstNumber; $i<$this->lastNumber +1; $i++) {
+        for ($i=$firstNumber; $i<$lastNumber +1; $i++) {
             $message = $this->messageSelector->select($i);
             $this->printMessage($message);
         }

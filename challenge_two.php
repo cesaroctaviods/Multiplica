@@ -12,5 +12,5 @@ const FIRST_NUMBER=1;
 const LAST_NUMBER=100;
 $checker = new MultiplesChecker();
 $generator = new MessageSelector($checker);
-$rangePrinter = new RangePrinter($generator, FIRST_NUMBER, LAST_NUMBER);
-$rangePrinter->execute();
+$rangePrinter = new RangePrinter($generator);
+$rangePrinter->execute(FIRST_NUMBER, LAST_NUMBER);
