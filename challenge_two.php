@@ -4,13 +4,10 @@ namespace Multiplica;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Multiplica\Exam\MessageSelector;
-use Multiplica\Exam\MultiplesChecker;
-use Multiplica\Exam\RangePrinter;
+use Multiplica\Exam\ChallengeTwo;
 
 const FIRST_NUMBER=1;
 const LAST_NUMBER=100;
-$checker = new MultiplesChecker();
-$generator = new MessageSelector($checker);
-$rangePrinter = new RangePrinter($generator);
-$rangePrinter->execute(FIRST_NUMBER, LAST_NUMBER);
+
+$challengeTwo = new ChallengeTwo();
+$challengeTwo->execute(FIRST_NUMBER, LAST_NUMBER);

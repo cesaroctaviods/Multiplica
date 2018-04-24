@@ -4,16 +4,16 @@ namespace Multiplica\Exam;
 
 use Multiplica\Exam\MessageSelector;
 
-class RangePrinter
+class ChallengeTwo
 {
 
     /** @var MessageSelector  */
     private $messageSelector;
 
-    public function __construct(MessageSelector $messageSelector)
+    public function __construct( )
     {
-        $this->messageSelector=$messageSelector;
-
+        $checker = new MultiplesChecker();
+        $this->messageSelector = new MessageSelector($checker);
     }
 
     public function execute($firstNumber, $lastNumber)

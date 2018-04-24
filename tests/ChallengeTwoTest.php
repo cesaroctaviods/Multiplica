@@ -6,17 +6,15 @@
  * Time: 14:46
  */
 
-use Multiplica\Exam\MultiplesChecker;
-use Multiplica\Exam\MessageSelector;
-use Multiplica\Exam\RangePrinter;
+use Multiplica\Exam\ChallengeTwo;
 use PHPUnit\Framework\TestCase;
 
 
-class RangePrinterTest extends TestCase
+class ChallengeTwoTest extends TestCase
 {
 
-    /** @var RangePrinter */
-    private static $rangePrinter;
+    /** @var ChallengeTwo */
+    private static $challengeTwo;
 
     const MAX_NUMBER=100;
 
@@ -25,17 +23,13 @@ class RangePrinterTest extends TestCase
      */
     public static function setUpBeforeClass()/* The :void return type declaration that should be here would cause a BC issue */
     {
-        $checker = new MultiplesChecker();
-        $messageSelector = new MessageSelector($checker);
-
-
-        self::$rangePrinter = new RangePrinter($messageSelector);
+        self::$challengeTwo = new ChallengeTwo();
     }
 
     public function testRage()
     {
 
-        self::$rangePrinter->execute(1, 3);
+        self::$challengeTwo->execute(1, 3);
         $this->expectOutputString('1'."\n".'2'."\n".'Linio'."\n");
 
     }
