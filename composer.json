@@ -1,0 +1,12 @@
+{
+    "name": "cesaroctavio/multiplica",
+    "description": "examen de ingreso",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Cesar Octavio",
+            "email": "cesar.octavioxp@gmail.com"
+        }
+    ],
+    "require": {}
+}
