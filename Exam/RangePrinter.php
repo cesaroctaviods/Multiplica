@@ -2,19 +2,19 @@
 
 namespace Multiplica\Exam;
 
-use Multiplica\Exam\MessageGenerator;
+use Multiplica\Exam\MessageSelector;
 
 class RangePrinter
 {
     private $firstNumber;
     private $lastNumber;
 
-    /** @var MessageGenerator  */
-    private $generator;
+    /** @var MessageSelector  */
+    private $messageSelector;
 
-    public function __construct(MessageGenerator $generator, $firstNumber, $lastNumber)
+    public function __construct(MessageSelector $messageSelector, $firstNumber, $lastNumber)
     {
-        $this->generator=$generator;
+        $this->messageSelector=$messageSelector;
         $this->firstNumber=$firstNumber;
         $this->lastNumber=$lastNumber;
     }
@@ -22,7 +22,7 @@ class RangePrinter
     public function execute()
     {
         for ($i=$this->firstNumber; $i<$this->lastNumber +1; $i++) {
-            $message = $this->generator->generate($i);
+            $message = $this->messageSelector->select($i);
             $this->printMessage($message);
         }
     }

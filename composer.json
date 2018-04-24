@@ -11,7 +11,7 @@
     "autoload": {
         "classmap": [
             "Exam/MultiplesChecker.php",
-            "Exam/MessageGenerator.php",
+            "Exam/MessageSelector.php",
             "Exam/RangePrinter.php"
         ]
     },

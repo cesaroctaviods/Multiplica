@@ -5,7 +5,7 @@ namespace Multiplica\Exam;
 use Multiplica\Exam\MultiplesChecker;
 
 
-class MessageGenerator
+class MessageSelector
 {
     /** @var MultiplesChecker */
     private  $checker;
@@ -20,7 +20,7 @@ class MessageGenerator
         $this->checker=$checker;
     }
 
-    public function generate($number){
+    public function select($number){
         $returnedString=$this->checker->check(3, $number, $this::MULTIPLE_3_MESSAGE);
         $returnedString=$returnedString.$this->checker->check(5, $number, $this::MULTIPLE_5_MESSAGE);
 
