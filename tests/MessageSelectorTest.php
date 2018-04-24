@@ -59,6 +59,17 @@ class MessageSelectorTest extends TestCase
         );
     }
 
+    /**
+     * @dataProvider numbersProvider
+     */
+    public function testNumbers($number): void
+    {
+
+        $this->assertEquals(
+            $number, self::$messageSelector->select($number)
+        );
+    }
+
 
     public function linianosProvider()
     {
@@ -89,6 +100,24 @@ class MessageSelectorTest extends TestCase
             $linios[]=[$val];
         }
         return $linios;
+    }
+
+    public function numbersProvider()
+    {
+        $linianos=$this->getMultiplesOf(15, false);
+        $multiples3=$this->getMultiplesOf(3, false);
+        $multiples5=$this->getMultiplesOf(5, false);
+
+
+        $range= range(1,100);
+        $diff=array_diff($range, $linianos, $multiples3, $multiples5);
+
+        $numbers=[];
+        foreach($diff as $val){
+            $numbers[]=[$val];
+        }
+
+        return $numbers;
     }
 
 
